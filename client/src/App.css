@@ -1,0 +1,287 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
+  /* @import "component1.css";   Component-specific stylesheets, if any.   */
+  /* @import url(//fonts.googleapis.com/css?family=Font+Name); Add fonts from a hosted services like Google Fonts.   */
+
+  @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400..700&family=PT+Sans:wght@400;700&display=swap');
+  @import "~react-image-gallery/styles/css/image-gallery.css";
+
+  /*   ----- Variables  -----  */
+:root {
+    --custom-color-blue:#6f92b0;
+    --custom-color-light-blue:#eaeef3;
+    --custom-color-dark-blue:#232629;
+    --custom-color-tan:#d7cec3;
+   /* --custom-embellishment-name:; */
+  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+  body {       /* Can alternatively define in html {}. */
+    background-color:var(--custom-color-light-blue);
+    /* background-image:url("images/bg-beach.jpg"); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top left;
+    background-repeat: no-repeat;
+    color:var(--custom-color-dark-blue);
+    font-family:'PT Sans', sans-serif; /* Define with at least one font name and its related generic family name.*/
+
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {
+    background-color:var(--custom-color-dark-blue);
+    color:var(--custom-color-tan);
+    padding: 10px;
+    border: solid 3px var(--custom-color-dark-blue);
+    margin: 0%;
+  }
+  header img {width:18px; padding:4px;} 
+  main {
+    background-color:var(--custom-color-dark-blue);
+    color:var(--custom-color-light-blue);
+    padding: 2%;
+    border: solid 3px var(--custom-color-dark-blue);
+    margin: 0% 1% 0% 1%;
+
+  }
+  section {}
+  article {}
+    #topic1 {}
+    #topic2 {}
+  div {}
+  aside {}
+  footer {
+    border: solid 3px var(--custom-color-dark-blue);
+    color:var(--custom-color-tan);
+    background-color:var(--custom-color-dark-blue);
+    margin: 5px 1% 1% 1%;
+    padding: 5px;
+  }
+  
+  /* ----- Anchors ----- Text links */
+  a {}
+  a:link {}
+  a:hover {}
+  a:active {}
+  a:visited {}
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+    background-color:var(--custom-color-dark-blue);
+    color:var(--custom-color-dark-blue);
+    padding: 10px;
+    border: solid var(--custom-color-dark-blue);
+    display:flex;
+    margin: 5px 1% 5px 1%;
+  }
+  nav a {
+    text-decoration:none;
+    color:var(--custom-color-dark-blue);
+    border: solid 3px var(--custom-color-blue);
+    margin: 3px;
+    padding: 5px;
+    font-size: large;
+    font-weight: bold;
+  }
+  nav a:visited{
+    color:var(--custom-color-light-blue);
+  }
+  nav a:hover {
+    border: solid 3px var(--custom-color-tan);
+  }
+  .local {
+    display:flex;
+    flex-flow: row;
+    background-color: var(--custom-color-dark-blue);
+    border: solid var(--custom-color-light-blue);
+  }
+  .local a {color: var(--custom-color-blue);}
+  .local a:hover {border: solid 3px var(--custom-color-tan);
+  color: ;}
+  /*  -----  Typography  ----- */
+  p {}
+  br {}
+  ol, ul, dl {}
+  li {}
+  dt {}
+  dd {}
+  
+  h1, h2, h3, h4, h5, h6 {font-family:'Cabin', sans-serif;} 
+  h1 {}
+  h2 {}
+  h3 {}
+  h4 {}
+  h5 {}
+  h6 {}
+  
+  abbr {}
+  acronym {}
+  address {}
+  blockquote {}
+    q {}
+    cite {}
+  em {}
+  hr {}
+  mark {}
+  s {}
+  span {}
+  strong {}
+  sub {}
+  sup {}
+  time {}
+  
+  /*  ----- Coding or instructional typography ----- */
+  pre {}
+  code {}
+  kbd {}
+  samp {}
+  var {}
+  del {} 
+  ins {}
+  
+  /*  ----- Table ----- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: var(--custom-color-light-blue);
+    color: var(--custom-color-dark-blue); /* Text color for general table content */
+}
+
+  caption {
+    padding: 10px;
+    color: var(--custom-color-blue);
+    background-color: var(--custom-color-tan);
+    font-weight: bold;
+    text-align: left;
+}
+
+  tr th {
+    background-color: var(--custom-color-blue);
+    color: white; /* Ensures legibility against the darker background */
+    padding: 12px 15px;
+    border: 1px solid var(--custom-color-dark-blue);
+}
+
+  tr td {
+    padding: 10px 15px;
+    border: 1px solid var(--custom-color-dark-blue);
+    color: var(--custom-color-dark-blue); /* Text color for table data */
+    background-color: var(--custom-color-light-blue); /* Lighter background for contrast */
+}
+  thead {}
+  tbody {}
+  tfoot {}
+  tr {}
+    tr:nth-child(even) {}
+  th {}
+  td {}
+    td:nth-child(1) {}
+  colgroup {}
+  data {}
+  datalist {}
+  
+  
+  /*  ----- Form ----- */
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+  }
+  fieldset {
+    background-color: var(--custom-color-dark-blue);
+    color:var(--custom-color-tan);
+    font-weight: bold;
+    padding: 10px;
+  }
+    legend {color: var(--custom-color-dark-blue);
+      border: solid 3px var(--custom-color-blue);
+      background-color: var(--custom-color-tan);
+      padding: 5px;
+    }
+  label {color: var(--custom-color-light-blue);
+  margin: 10x;}
+  button {
+    min-width: 200px;
+    min-height: 50px;
+    margin: 5px;
+    border: solid 5px var(--custom-color-dark-blue);
+    font-weight: bold;
+    background-color: var(--custom-color-tan);
+  }
+  input {margin: 5px;}
+  select {
+    background-color: var(--custom-color-tan);
+    color: var(--custom-color-dark-blue);
+    padding: 5px;
+    font-weight: bold;
+}
+    optgroup {}
+    option {font-weight: bold;}
+  textarea {
+    height: 15em;
+    width: 25em;
+  }
+  output {}
+  meter {}
+  progress {}
+  
+  
+  /* ----- Media ----- */
+  figure {
+    border: solid var(--custom-color-light-blue);
+  }
+    figcaption {
+      padding: 5px;
+      border: solid var(--custom-color-light-blue);
+      background-color: var(--custom-color-tan);
+      color: var(--custom-color-dark-blue);
+      font-weight:bold;
+    }
+    figure img {}
+  svg {}
+  picture {}
+    source {}
+  iframe {}
+  video {}
+  audio {}
+  embed {}
+  object {}
+  
+  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+  
+  .floatright {}
+  .floatleft {}
+  .center-middle {}
+  
+  .ten {}
+  .twenty {}
+  .thirty {}
+  .forty {}
+  .fifty {}
+  .sixty {}
+  .seventy {}
+  .eighty {}
+  
+  .radius {}
+  .circle {}
+  .boxshadow {}
+  .tshadow {} 
+  .gradient {}
+  .shape {}
+  
+  @keyframes App-logo {}
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
+  

@@ -1,0 +1,87 @@
+### CREATE five documents.
+POST http://localhost:3000/commanders HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Rin and Seri, Inseparable",
+    "wins": 2,
+    "losses": 2,
+    "lastPlayed": "02-02-24"
+}
+
+### CREATE 2
+POST http://localhost:3000/commanders HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Miirym, Sentinel Wyrm",
+    "wins": 4,
+    "losses": 2,
+    "lastPlayed": "03-01-24"
+}
+
+### CREATE 3
+POST http://localhost:3000/commanders HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Wilhelt, the Rotcleaver",
+    "wins": 7,
+    "losses": 5,
+    "lastPlayed": "10-25-23"
+}
+
+### CREATE 4
+POST http://localhost:3000/commanders HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Shorikai, Genesis Engine",
+    "wins": 4,
+    "losses": 7,
+    "lastPlayed": "07-11-23"
+}
+
+### CREATE 5
+POST http://localhost:3000/commanders HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Teysa Karlov",
+    "wins": 3,
+    "losses": 3,
+    "lastPlayed": "09-05-23"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/commanders HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/commanders/65e65dc368056d7d74a646fa HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/commanders/65e65e6d68056d7d74a6470b HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Rin and Seri, Inseperible",
+    "wins": 2,
+    "losses": 2,
+    "lastPlayed": "02-02-23"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/commanders/65e65e6f68056d7d74a6470d HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/commanders HTTP/1.1
+
