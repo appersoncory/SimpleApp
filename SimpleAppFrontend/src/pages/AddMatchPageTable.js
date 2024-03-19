@@ -1,46 +1,47 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-export const EditMatchPageTable = ({ matchToEdit }) => {
- 
-    const [name, setName]       = useState(matchToEdit.name);
-    const [wins, setWins]         = useState(matchToEdit.wins);
-    const [losses, setLosses] = useState(matchToEdit.losses);
-    const [lastPlayed, setLastPlayed] = useState(matchToEdit.lastPlayed.slice(0,10));
-    
+// Change the icons, function names, and parameters 
+// to fit your portfolio topic and schema.
+
+export const AddMatchPageTable = () => {
+
+    const [name, setName]       = useState('');
+    const [wins, setWins]         = useState('');
+    const [losses, setLosses]         = useState('');
+    const [lastPlayed, setLastPlayed]         = useState('');
+
     const redirect = useNavigate();
 
-    const editMatch = async () => {
-        const response = await fetch(`/matches/${matchToEdit._id}`, {
-            method: 'PUT',
-            body: JSON.stringify({ 
-                name: name, 
-                wins: wins, 
-                losses: losses,
-                lastPlayed: lastPlayed
-            }),
-            headers: {'Content-Type': 'application/json',},
+    const addMatch = async () => {
+        const newMatch = { name, wins, losses, lastPlayed};
+        const response = await fetch('https://simpleappbackend.onrender.com/matches', {
+            method: 'post',
+            body: JSON.stringify(newMatch),
+            headers: {
+                'Content-Type': 'application/json',
+            },
         });
-
-        if (response.status === 200) {
-            alert(`Successfully updated match info.`);
+        if(response.status === 201){
+            alert(`Successfully recorded match.`);
         } else {
-            const errMessage = await response.json();
-            alert(`Failed to update match info. ${response.status}. ${errMessage.Error}`);
+            alert(`Error adding match = ${response.status}`);
         }
         redirect("/matches");
-    }
+    };
+
 
     return (
         <>
         <article>
-            <h2>Edit a match</h2>
+            <h2>Add a match</h2>
             <p>Paragraph about this page.</p>
+            
             <table id="matches">
                 <caption>Which match are you adding?</caption>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Names</th>
                         <th>Wins</th>
                         <th>Losses</th>
                         <th>Last Played</th>
@@ -48,10 +49,10 @@ export const EditMatchPageTable = ({ matchToEdit }) => {
                 </thead>
                 <tbody>
                 <tr>
-                <td><label for="title">Commander Name</label>
+                <td><label for="name">Commander Name</label>
                         <input
                             type="text"
-                            placeholder="Name of the played Commander"
+                            placeholder="Name of the Commander"
                             value={name}
                             onChange={e => setName(e.target.value)} 
                             id="name" />
@@ -61,24 +62,21 @@ export const EditMatchPageTable = ({ matchToEdit }) => {
                         <input
                             type="number"
                             value={wins}
-                            placeholder="Number of wins"
                             onChange={e => setWins(e.target.value)} 
                             id="wins" />
                     </td>
 
-                    <td><label for="losses">Times lost</label>
+                    <td><label for="losses">Times Lost</label>
                         <input
                             type="number"
                             value={losses}
-                            placeholder="Number of losses"
                             onChange={e => setLosses(e.target.value)} 
                             id="losses" />
                     </td>
 
                     <td><label for="lastPlayed">Last Played</label>
                         <input
-                            type="Date"
-                            placeholder="Date of the last match"
+                            type="date"
                             value={lastPlayed}
                             onChange={e => setLastPlayed(e.target.value)} 
                             id="lastPlayed" />
@@ -88,15 +86,16 @@ export const EditMatchPageTable = ({ matchToEdit }) => {
                     <label for="submit">Commit</label>
                         <button
                             type="submit"
-                            onClick={editMatch}
+                            onClick={addMatch}
                             id="submit"
-                        >Edit</button>
+                        >Add</button>
                     </td>
                 </tr>
                 </tbody>
             </table>
-            </article>
-        </>
-    );
+        </article>
+    </>
+);
 }
-export default EditMatchPageTable;
+
+export default AddMatchPageTable;

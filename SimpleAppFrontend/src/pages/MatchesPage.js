@@ -2,9 +2,6 @@ import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import MatchList from '../components/MatchList';
-import { Link } from 'react-router-dom';
-
-import { RxCardStackPlus } from "react-icons/rx";
 
 function MatchesPage({ setMatch }) {
     // Use the Navigate for redirection
@@ -15,7 +12,7 @@ function MatchesPage({ setMatch }) {
 
     // RETRIEVE the entire list of matches
     const loadMatches = async () => {
-        const response = await fetch('/matches');
+        const response = await fetch('https://simpleappbackend.onrender.com/matches');
         const matches = await response.json();
         setMatches(matches);
     } 
@@ -27,12 +24,11 @@ function MatchesPage({ setMatch }) {
         redirect("/update");
     }
 
-
     // DELETE a single match  
     const onDeleteMatch = async _id => {
-        const response = await fetch(`/matches/${_id}`, { method: 'DELETE' });
+        const response = await fetch(`https://simpleappbackend.onrender.com/matches/${_id}`, { method: 'DELETE' });
         if (response.status === 200) {
-            const getResponse = await fetch('/matches');
+            const getResponse = await fetch('https://simpleappbackend.onrender.com/matches');
             const matches = await getResponse.json();
             setMatches(matches);
         } else {

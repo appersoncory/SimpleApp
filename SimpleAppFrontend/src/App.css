@@ -81,7 +81,7 @@
   }
   nav a {
     text-decoration:none;
-    color:var(--custom-color-dark-blue);
+    color:var(--custom-color-blue);
     border: solid 3px var(--custom-color-blue);
     margin: 3px;
     padding: 5px;

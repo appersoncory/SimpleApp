@@ -3,12 +3,18 @@
 import 'dotenv/config';
 import express from 'express';
 import * as matches from './matches-model.mjs';
-
+import cors from 'cors';
 const PORT = process.env.PORT;
+const MONGO_URI = process.env.MONGO_URI;
 const app = express();
+
 app.use(express.json());  // REST needs JSON MIME type.
 
-
+// Use CORS and specify allowed origin
+app.use(cors({
+    origin: 'https://main--osu-simple-app.netlify.app'
+  }));
+  
 // CREATE controller ******************************************
 app.post ('/matches', (req,res) => { 
     matches.createMatch(
@@ -103,6 +109,4 @@ app.delete('/matches/:_id', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}...`);
-});
+app.listen(PORT);

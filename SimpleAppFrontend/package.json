@@ -1,7 +1,7 @@
 {
-  "name": "movies-starter-frontend",
-  "version": "2023",
-  "private": true,
+  "name": "simple-app",
+  "version": "1.0",
+  "private": false,
   "proxy": "http://localhost:3000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -42,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.0"
   }
 }
