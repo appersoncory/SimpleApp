@@ -2,6 +2,8 @@
 
 **Demo: https://main--osu-simple-app.netlify.app/**
 
+<img width="1262" alt="SimpleApp Screenshot" src="https://github.com/appersoncory/SimpleApp/assets/84872642/7e163e5e-c147-40f7-822c-1ed213bc0732">
+
 SimpleApp is a web application built using the MERN stack. It allows users to record, view, edit, and delete their Commander match records. Beyond match tracking, the application serves as a portfolio showcasing web design insights and an image gallery of various projects I've worked on. The backend is deployed on Render, while the frontend is hosted on Netlify, ensuring a smooth and responsive user experience across all devices.
 
 ## Features
