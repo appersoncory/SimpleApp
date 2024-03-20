@@ -19,29 +19,29 @@ To get a local copy up and running follow these simple steps.
 - MongoDB
 - Any text editor (VSCode, Sublime Text, etc.)
 
-### Installing
+## Installing
 
 Follow these steps to set up your development environment:
 
-## Backend Setup
+### Backend Setup
 
 Clone the repo and navigate to the SimpleAppBackend folder:
 
 ``` cd SimpleAppBackend ```
 
-## Install dependencies:
+### Install dependencies:
 
 ``` npm install ```
 
 Set up your environment variables in a .env file including your MongoDB URI.
 
-## Start the server:
+### Start the server:
 
 ``` npm start ```
 
 The backend should now be operational on localhost:5000.
 
-## Frontend Setup
+### Frontend Setup
 
 In a new terminal, navigate to the SimpleAppFrontend directory:
 
